@@ -1,0 +1,19 @@
+﻿<Window x:Class="Amusoft.EventManagement.WindowTests.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amusoft.EventManagement.WindowTests"
+        mc:Ignorable="d"
+		x:Name="Self"
+        Title="MainWindow" Height="350" Width="525">
+	<Border Padding="10">
+		<StackPanel>
+			<CheckBox	Margin="0,5" IsChecked="{Binding ElementName=Self, Path=IsUnloadedOnClose}" Content="Unload On Close"></CheckBox>
+			<ComboBox	Margin="0,5" ItemsSource="{Binding Source={local:EnumValues {x:Type local:EventTypes}}}" SelectedValue="{Binding ElementName=Self, Path=EventType}"></ComboBox>
+			<Button		Margin="0,5" Content="GC Collect" Command="{Binding ElementName=Self, Path=CollectGarbageCommand}"></Button>
+			<Button		Margin="0,5" Content="Raise Event" Command="{Binding ElementName=Self, Path=RaiseEventCommand}"></Button>
+			<Button		Margin="0,5" Content="Open Window" Command="{Binding ElementName=Self, Path=OpenChildWindowCommand}"></Button>
+		</StackPanel>
+	</Border>
+</Window>

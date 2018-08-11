@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7B34F81B-049C-48F7-BBC5-9AD8663C2DA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{52395E8D-736F-4BFD-A5D6-A19D01034455}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{96DB8FEF-00EB-46A0-A618-5BB41321845A}"
+	ProjectSection(SolutionItems) = preProject
+		build\build.cake = build\build.cake
+		build\build.ps1 = build\build.ps1
+		build\build.sh = build\build.sh
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amusoft.EventManagement", "src\Amusoft.EventManagement\Amusoft.EventManagement.csproj", "{E2917478-E232-4ACA-B465-7B8592116A13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amusoft.EventManagement.Test", "tests\Amusoft.EventManagement.Test\Amusoft.EventManagement.Test.csproj", "{959AB9BB-273B-4CED-9E69-FA20868C5287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amusoft.EventManagement.WindowTests", "tests\Amusoft.EventManagement.WindowTests\Amusoft.EventManagement.WindowTests.csproj", "{42156BC2-7BBF-435B-910E-3C946AAA26A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2917478-E232-4ACA-B465-7B8592116A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2917478-E232-4ACA-B465-7B8592116A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2917478-E232-4ACA-B465-7B8592116A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2917478-E232-4ACA-B465-7B8592116A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959AB9BB-273B-4CED-9E69-FA20868C5287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959AB9BB-273B-4CED-9E69-FA20868C5287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959AB9BB-273B-4CED-9E69-FA20868C5287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959AB9BB-273B-4CED-9E69-FA20868C5287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42156BC2-7BBF-435B-910E-3C946AAA26A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42156BC2-7BBF-435B-910E-3C946AAA26A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42156BC2-7BBF-435B-910E-3C946AAA26A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42156BC2-7BBF-435B-910E-3C946AAA26A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2917478-E232-4ACA-B465-7B8592116A13} = {52395E8D-736F-4BFD-A5D6-A19D01034455}
+		{959AB9BB-273B-4CED-9E69-FA20868C5287} = {7B34F81B-049C-48F7-BBC5-9AD8663C2DA7}
+		{42156BC2-7BBF-435B-910E-3C946AAA26A3} = {7B34F81B-049C-48F7-BBC5-9AD8663C2DA7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDFD8C6C-7EA8-4A55-B45D-DCAEB6996357}
+	EndGlobalSection
+EndGlobal

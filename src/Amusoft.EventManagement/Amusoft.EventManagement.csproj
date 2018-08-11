@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard1.1;net45;net40</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Version>3.0.0</Version>
+		<Authors>Andreas Müller</Authors>
+		<Company />
+		<Product />
+		<PackageProjectUrl>https://github.com/taori/Amusoft/tree/master/Amusoft.EventManagement</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/taori/Amusoft/blob/master/LICENSE.MD</PackageLicenseUrl>
+		<Copyright>Copyright 2018</Copyright>
+		<Description>Offers a way of creating weakbindings to avoid Memory Leaks when using events.</Description>
+		<PackageReleaseNotes>- Utilizes C#7.3 to support any kind of delegates
+- Netstandard 1.1 support
+- Net4.0 support</PackageReleaseNotes>
+		<PackageTags>WeakEvent</PackageTags>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>WeakEvent</PackageId>
+		<RepositoryUrl>https://github.com/taori/Amusoft/tree/master/Amusoft.EventManagement</RepositoryUrl>
+		<AssemblyVersion>3.0.0.0</AssemblyVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net40'">
+		<DefineConstants>NET40</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="AsyncWeakEvent.cs" />
+	</ItemGroup>
+
+	<!-- <ItemGroup Condition="'$(TargetFramework)' == 'net45'"> -->
+	<!--   <PackageReference Include="Microsoft.Bcl.Async"> -->
+	<!--     <Version>1.0.168</Version> -->
+	<!--   </PackageReference> -->
+	<!-- </ItemGroup> -->
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+	  <PackageReference Include="Microsoft.Bcl.Async">
+	    <Version>1.0.168</Version>
+	  </PackageReference>
+	</ItemGroup>
+
+</Project>
