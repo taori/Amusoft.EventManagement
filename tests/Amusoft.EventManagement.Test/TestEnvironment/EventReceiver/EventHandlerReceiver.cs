@@ -20,7 +20,7 @@ namespace Amusoft.EventManagement.Test.TestEnvironment.EventReceiver
 		protected override Task OnBeforeNotifyExecution()
 		{
 			Thread.Sleep(ExecutionTimeSpan);
-			return Task.CompletedTask;
+			return System.Threading.Tasks.Task.CompletedTask;
 		}
 	}
 }

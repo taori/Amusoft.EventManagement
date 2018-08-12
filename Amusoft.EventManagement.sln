@@ -9,9 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{52395E8D-736
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{96DB8FEF-00EB-46A0-A618-5BB41321845A}"
 	ProjectSection(SolutionItems) = preProject
-		build\build.cake = build\build.cake
 		build\build.ps1 = build\build.ps1
-		build\build.sh = build\build.sh
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amusoft.EventManagement", "src\Amusoft.EventManagement\Amusoft.EventManagement.csproj", "{E2917478-E232-4ACA-B465-7B8592116A13}"

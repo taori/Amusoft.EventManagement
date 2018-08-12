@@ -58,8 +58,8 @@ namespace Amusoft.EventManagement.Test.BehaviorTests
 			var elapsed = DateTime.Now - start;
 			Assert.That(receiver.CallCount, Is.EqualTo(0));
 			Assert.That(elapsed, Is.LessThanOrEqualTo(TimeSpan.FromMilliseconds(100)));
-
-			return Task.CompletedTask;
+			
+			return System.Threading.Tasks.Task.CompletedTask;
 		}
 	}
 }

@@ -66,7 +66,7 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 		}
 
 		[Test]
-		public async Task OrdinaryVerifyStaticCall()
+		public Task OrdinaryVerifyStaticCall()
 		{
 			var source = new OrdinaryStaticCallSource();
 			source.Add(StaticCallReceiver.Receive);
@@ -74,10 +74,12 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Invoker(source, information);
 
 			Assert.That(information.CallCount, Is.EqualTo(1));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public async Task WeakVerifyStaticCall()
+		public Task WeakVerifyStaticCall()
 		{
 			var source = new WeakStaticCallSource();
 			source.Add(StaticCallReceiver.Receive);
@@ -85,10 +87,12 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Invoker(source, information);
 
 			Assert.That(information.CallCount, Is.EqualTo(1));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public async Task OrdinaryVerifyStaticUnsubscribedCall()
+		public Task OrdinaryVerifyStaticUnsubscribedCall()
 		{
 			var source = new OrdinaryStaticCallSource();
 			source.Add(StaticCallReceiver.Receive);
@@ -97,10 +101,12 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Invoker(source, information);
 
 			Assert.That(information.CallCount, Is.EqualTo(0));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public async Task WeakVerifyStaticUnsubscribedCall()
+		public Task WeakVerifyStaticUnsubscribedCall()
 		{
 			var source = new WeakStaticCallSource();
 			source.Add(StaticCallReceiver.Receive);
@@ -109,6 +115,8 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Invoker(source, information);
 
 			Assert.That(information.CallCount, Is.EqualTo(0));
+
+			return Task.CompletedTask;
 		}
 	}
 }

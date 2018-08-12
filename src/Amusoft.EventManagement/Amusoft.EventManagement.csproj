@@ -16,7 +16,7 @@
 - Net4.0 support</PackageReleaseNotes>
 		<PackageTags>WeakEvent</PackageTags>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<PackageId>WeakEvent</PackageId>
 		<RepositoryUrl>https://github.com/taori/Amusoft/tree/master/Amusoft.EventManagement</RepositoryUrl>
 		<AssemblyVersion>3.0.0.0</AssemblyVersion>

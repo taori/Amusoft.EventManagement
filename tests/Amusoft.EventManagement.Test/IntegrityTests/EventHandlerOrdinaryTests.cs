@@ -15,7 +15,7 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 	public class EventHandlerOrdinaryTests : IntegrityTestBase<EventHandler, EventHandlerReceiver, EventHandlerOrdinarySource>
 	{
 		[Test]
-		public override async Task ExpectedExecutionTimeTwoSubOneSource()
+		public override Task ExpectedExecutionTimeTwoSubOneSource()
 		{
 			var receiver = CreateEventReceiver();
 			var source = CreateEventSource();
@@ -27,10 +27,12 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			var elapsed = DateTime.Now - start;
 			Assert.That(elapsed, Is.GreaterThanOrEqualTo(TimeSpan.FromMilliseconds(1950)));
 			Assert.That(elapsed, Is.LessThanOrEqualTo(TimeSpan.FromMilliseconds(2050)));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public override async Task ExpectedExecutionTimeTwoReceiverOneSource()
+		public override Task ExpectedExecutionTimeTwoReceiverOneSource()
 		{
 			var receiver1 = CreateEventReceiver();
 			receiver1.ExecutionTimeSpan = TimeSpan.FromSeconds(1);
@@ -44,10 +46,12 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			var elapsed = DateTime.Now - start;
 			Assert.That(elapsed, Is.GreaterThanOrEqualTo(TimeSpan.FromMilliseconds(1950)));
 			Assert.That(elapsed, Is.LessThanOrEqualTo(TimeSpan.FromMilliseconds(2050)));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public override async Task RaiseOnceDoubleSubscribe()
+		public override Task RaiseOnceDoubleSubscribe()
 		{
 			var receiver = CreateEventReceiver();
 			var source = CreateEventSource();
@@ -55,29 +59,35 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Add(receiver.Receiver());
 			source.Invoker(this, EventArgs.Empty);
 			Assert.That(receiver.CallCount, Is.EqualTo(2));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public override async Task RaiseOnceOneSubscribe()
+		public override Task RaiseOnceOneSubscribe()
 		{
 			var receiver = CreateEventReceiver();
 			var source = CreateEventSource();
 			source.Add(receiver.Receiver());
 			source.Invoker(this, EventArgs.Empty);
 			Assert.That(receiver.CallCount, Is.EqualTo(1));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public override async Task RaiseWithNoSubscribe()
+		public override Task RaiseWithNoSubscribe()
 		{
 			var receiver = CreateEventReceiver();
 			var source = CreateEventSource();
 			source.Invoker(this, EventArgs.Empty);
 			Assert.That(receiver.CallCount, Is.EqualTo(0));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public override async Task RaiseOnceTwoSubscribers()
+		public override Task RaiseOnceTwoSubscribers()
 		{
 			var receiver1 = CreateEventReceiver();
 			var receiver2 = CreateEventReceiver();
@@ -87,10 +97,12 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Invoker(this, EventArgs.Empty);
 			Assert.That(receiver1.CallCount, Is.EqualTo(1));
 			Assert.That(receiver2.CallCount, Is.EqualTo(1));
+
+			return Task.CompletedTask;
 		}
 
 		[Test]
-		public override async Task SubRaiseUnsubRaiseSubRaise()
+		public override Task SubRaiseUnsubRaiseSubRaise()
 		{
 			var receiver = CreateEventReceiver();
 			var source = CreateEventSource();
@@ -103,6 +115,8 @@ namespace Amusoft.EventManagement.Test.IntegrityTests
 			source.Add(receiver.Receiver());
 			source.Invoker(this, EventArgs.Empty);
 			Assert.That(receiver.CallCount, Is.EqualTo(2));
+
+			return Task.CompletedTask;
 		}
 	}
 }

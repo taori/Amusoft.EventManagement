@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\src\Amusoft.EventManagement\Compatibility\ReflectionExtensions.cs" Link="ReflectionExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JetBrains.DotMemoryUnit" Version="3.0.20171219.105559" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
     <!--<PackageReference Include="xunit" Version="2.3.1" />
