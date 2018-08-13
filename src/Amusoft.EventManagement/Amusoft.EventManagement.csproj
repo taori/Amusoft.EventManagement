@@ -9,7 +9,7 @@
 		<Product />
 		<PackageProjectUrl>https://github.com/taori/Amusoft.EventManagement</PackageProjectUrl>
 		<PackageLicenseUrl>https://github.com/taori/Amusoft/blob/master/LICENSE.MD</PackageLicenseUrl>
-		<Copyright>Copyright 2018</Copyright>
+		<Copyright>© Andreas Müller</Copyright>
 		<Description>Offers a way of creating weakbindings to avoid Memory Leaks when using events.</Description>
 		<PackageReleaseNotes>- Utilizes C#7.3 to support any kind of delegates
 - Netstandard 1.1 support
